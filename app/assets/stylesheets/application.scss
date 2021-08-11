@@ -11,3 +11,52 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+.glass {
+  background-color: #99939041;
+  border-radius: 2.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: white;
+  font-weight: bold;
+}
+
+.session-field {
+  background-color: #99939041;
+  border-radius: 2.5rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: white;
+  font-weight: bold;
+}
+.sub-choice {
+  text-align: center;
+  width: 80%;
+  padding-top: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  border-top: 2px solid #999390;
+  a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+  }
+}
+
+.form-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.logo {
+  margin-bottom: 3rem;
+}
