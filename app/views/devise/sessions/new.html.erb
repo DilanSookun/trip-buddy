@@ -7,16 +7,16 @@
       </div>
         <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="form-inputs">
-            <%= f.input :email, label: "Enter your email", label_html: { class: "text-white" },
+            <%= f.input :email, label: "Enter your email", label_html: { class: "text-secondary" },
                         required: false,
                         autofocus: true,
                         placeholder: "your@email.com",
                         input_html: { class: "session-field", autocomplete: "email" } %>
-            <%= f.input :password, label_html: { class: "text-white" },
+            <%= f.input :password, label_html: { class: "text-secondary" },
                         required: false,
                         placeholder: "******************",
                         input_html: { class: "session-field", autocomplete: "current-password" } %>
-            <%= f.input :remember_me, label_html: { class: "text-white" }, as: :boolean if devise_mapping.rememberable? %>
+            <%= f.input :remember_me, label_html: { class: "text-secondary" }, as: :boolean if devise_mapping.rememberable? %>
           </div>
 
           <div class="form-actions">
