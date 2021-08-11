@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new
   end
-  
+
   def create
     @trip = Trip.find(params[:booking][:trip_id])
     @booking = Booking.new(booking_params)
@@ -36,4 +36,5 @@ class BookingsController < ApplicationController
 
   def booking_params
     params.require(:booking).permit(:review, :total_price)
+  end
 end
