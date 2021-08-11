@@ -1,0 +1,32 @@
+<div class="d-flex justify-content-center align-items-center">
+  <div class="row w-100">
+    <div class="col-sm-12">
+      <div class="form-login">
+      <div class="logo">
+        <%= image_tag("logo.png", width: "150px", height: "150px") %>
+      </div>
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="form-inputs">
+            <%= f.input :email, label: "Enter your email", label_html: { class: "text-white" },
+                        required: false,
+                        autofocus: true,
+                        placeholder: "your@email.com",
+                        input_html: { class: "session-field", autocomplete: "email" } %>
+            <%= f.input :password, label_html: { class: "text-white" },
+                        required: false,
+                        placeholder: "******************",
+                        input_html: { class: "session-field", autocomplete: "current-password" } %>
+            <%= f.input :remember_me, label_html: { class: "text-white" }, as: :boolean if devise_mapping.rememberable? %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, "Log in", class: "glass" %>
+          </div>
+        <% end %>
+        <div class="sub-choice">
+          <%= render "devise/shared/links" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
