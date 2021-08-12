@@ -1,5 +1,6 @@
 class TripsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: %i[index show trip_choice]
+  before_action :skip_authorization, only: %i[index show trip_choice]
 
   def index
     @trips = policy_scope(Trip)
@@ -9,7 +10,7 @@ class TripsController < ApplicationController
       {
         lat: trip.latitude,
         lng: trip.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { trip: trip }),
+        info_window: render_to_string(partial: "info_window_index", locals: { trip: trip }),
         image_url: helpers.asset_url('background.jpg')
       }
     end
@@ -22,6 +23,18 @@ class TripsController < ApplicationController
   def show
     @trip = Trip.find(params[:id])
     @booking = Booking.new
+    @markers = [{
+      lat: @trip.latitude,
+      lng: @trip.longitude,
+      info_window: render_to_string(partial: "info_window_show", locals: { trip: @trip }),
+      image_url: helpers.asset_url('background.jpg')
+    },
+                {
+                  lat: @trip.stop_1_lat,
+                  lng: @trip.stop_1_long,
+                  info_window: render_to_string(partial: "info_window2", locals: { trip: @trip }),
+                  image_url: helpers.asset_url('background.jpg')
+                }]
   end
 
   def create
@@ -42,9 +55,16 @@ class TripsController < ApplicationController
     redirect_to trips_path
   end
 
+  def trip_choice
+    @choice = params[:choice]
+    @trips = Trip.select { |trip| trip.choice == @choice }
+    render '_trip_choice'
+  end
+
   private
 
   def trip_params
-    params.require(:trip).permit(:name, :description, :duration, :location, :price, :stop_1, :stop_2, :choice, :category)
+    params.require(:trip).permit(:name, :description, :duration, :location, :price, :stop_1, :stop_2, :choice,
+                                 :category)
   end
 end
