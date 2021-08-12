@@ -34,6 +34,7 @@ gem 'simple_form'
 gem 'devise'
 gem 'pundit'
 gem 'cloudinary'
+gem 'geocoder'
 
 gem 'dotenv-rails', groups: [:development, :test]
 
