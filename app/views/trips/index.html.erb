@@ -1,2 +1,10 @@
 <h1>Trips#index</h1>
 <p>Find me in app/views/trips/index.html.erb</p>
+
+<%# MAPBOX API implementation codes : TESTING ONLY %>
+
+<div id="map"
+     style="width: 100%; height: 600px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+     
