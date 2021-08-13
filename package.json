@@ -2,7 +2,7 @@
   "name": "trip_buddy",
   "private": true,
   "engines": {
-    "node": "16.6.2"
+    "node": "12.16.2"
   },
   "dependencies": {
     "@mapbox/mapbox-gl-geocoder": "^4.7.2",
