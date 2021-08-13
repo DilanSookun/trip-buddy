@@ -1,25 +1,31 @@
-trips#index
-<div class="d-flex justify-content-center align-items-center">
-  <div class="row justify-content-center align-items-center w-100">
-    <div class="col-sm-12 d-flex justify-content-center">
-      <div class="my-3">
-        <%= image_tag("logo.png", width: "70px", height: "70px") %>
-      </div>
-    </div>
-    <div class="col-sm-12 d-flex justify-content-center">
-    <h1>When you want it?</h1>
-      <div class="sub-choice">
-        <%= link_to 'Day', { controller: 'trips', action: 'trip_choice', choice: 'day' }, class: "glass" %>
-      </div>
-      <div class="sub-choice">
-        <%= link_to 'Night', { controller: 'trips', action: 'trip_choice', choice: 'night' }, class: "glass" %>
-      </div>
-
-      <div class="sub-choice">
-        <%= link_to 'return to home', :back, class: "glass" %>
-      </div>
-    </div>
-  </div>
+<div class="body">
+ <div class="d-flex justify-content-center align-items-center">
+   <div class="row justify-content-center align-items-center w-100">
+     <div class="col-sm-12 d-flex justify-content-center">
+       <div class="my-3">
+         <%= image_tag("logo.png", width: "70px", height: "70px") %>
+       </div>
+     </div>
+     <div class="col-sm-12 d-flex justify-content-center">
+       <h1>Choose your preferred adventure time</h1>
+     </div>
+     <div class="col-sm-12 d-flex justify-content-center">
+       <div class="sub-choice">
+         <div class="icon">
+           <%= cl_image_tag("https://res.cloudinary.com/trip-buddy/image/upload/v1628841571/trip%20buddy/sun_ssjdiw.png", width: "30px", height: "30px",) %>
+           <%= link_to 'Day', { controller: 'trips', action: 'trip_choice', choice: 'day' }, class: "glass" %>
+         </div>
+       </div>
+       <div class="sub-choice">
+         <div class="icon">
+           <%= link_to 'Night', { controller: 'trips', action: 'trip_choice', choice: 'night' }, class: "glass" %>
+          <%= cl_image_tag("https://res.cloudinary.com/trip-buddy/image/upload/v1628841570/trip%20buddy/moon_3_v7glu9.jpg", width: "30px", height: "30px") %>
+         </div>
+       </div>
+     </div>
+       <div class="sub-choice">
+         <%= link_to 'return to home', :back, class: "glass" %>
+       </div>
+   </div>
+ </div>
 </div>
-
-<%= link_to 'label', { controller: 'trips', action: 'trip_choice', choice: 'day' } %>

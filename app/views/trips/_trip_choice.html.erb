@@ -1,5 +1,26 @@
-<div id="<%= @choice %>">
-  <% @trips.map do |trip| %>
-    <%= trip.category %>
-  <% end %>
+<div class="d-flex justify-content-center align-items-center">
+  <div class="row justify-content-center align-items-center w-100">
+    <div class="col-sm-12 d-flex justify-content-center">
+      <div class="my-3">
+        <%= image_tag("logo.png", width: "70px", height: "70px") %>
+      </div>
+    </div>
+    <div class="col-sm-12 d-flex justify-content-center">
+      <h1>When you want it?</h1>
+    </div>
+    <div class="col-sm-12 d-flex justify-content-center">
+      <div class="sub-category">
+        <%= link_to 'Hiking', { controller: 'trips', action: 'trip_category', category: 'hiking' }, class: "glass" %>
+      </div>
+      <div class="sub-category">
+        <%= link_to 'Sight Seeing', { controller: 'trips', action: 'trip_category', category: 'sight-seeing' }, class: "glass" %>
+      </div>
+    </div>
+      <div class="sub-category">
+        <%= link_to 'Sea Cruising', { controller: 'trips', action: 'trip_category', category: 'sea-cruising' }, class: "glass" %>
+      </div>
+      <div class="sub-category">
+        <%= link_to 'return to home', root_path, class: "glass" %>
+      </div>
+  </div>
 </div>

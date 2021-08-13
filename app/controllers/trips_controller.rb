@@ -1,6 +1,6 @@
 class TripsController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[index show trip_choice]
-  before_action :skip_authorization, only: %i[index show trip_choice]
+  skip_before_action :authenticate_user!, only: %i[index show trip_choice trip_category]
+  before_action :skip_authorization, only: %i[index show trip_choice trip_category]
 
   def index
     @trips = policy_scope(Trip)
@@ -64,7 +64,7 @@ class TripsController < ApplicationController
   def trip_category
     @category = params[:category]
     @trips = Trip.select { |trip| trip.category == @category }
-    render '_trip_choice'
+    render '_trip_destination'
   end
 
   private
