@@ -1,6 +1,9 @@
 {
   "name": "trip_buddy",
   "private": true,
+  "engines": {
+    "node": "16.6.2"
+  },
   "dependencies": {
     "@mapbox/mapbox-gl-geocoder": "^4.7.2",
     "@rails/actioncable": "^6.0.0",
