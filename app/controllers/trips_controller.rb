@@ -61,6 +61,12 @@ class TripsController < ApplicationController
     render '_trip_choice'
   end
 
+  def trip_category
+    @category = params[:category]
+    @trips = Trip.select { |trip| trip.category == @category }
+    render '_trip_choice'
+  end
+
   private
 
   def trip_params

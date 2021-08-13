@@ -9,10 +9,10 @@ trips#index
     <div class="col-sm-12 d-flex justify-content-center">
     <h1>When you want it?</h1>
       <div class="sub-choice">
-        <%= link_to 'Day', '#day', class: "glass" %>
+        <%= link_to 'Day', { controller: 'trips', action: 'trip_choice', choice: 'day' }, class: "glass" %>
       </div>
       <div class="sub-choice">
-        <%= link_to 'Night', '#night', class: "glass" %>
+        <%= link_to 'Night', { controller: 'trips', action: 'trip_choice', choice: 'night' }, class: "glass" %>
       </div>
 
       <div class="sub-choice">
