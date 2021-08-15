@@ -1,17 +1,18 @@
 <div class="d-flex justify-content-center align-items-center">
   <div class="row justify-content-center align-items-center w-100">
+
     <div class="col-sm-12 d-flex justify-content-center">
-      <div class="logo">
-        <%= image_tag("logo.png", width: "150px", height: "140px") %>
+      <div class="card" class="col-sm-12 d-flex justify-content-center">
+        <div class="card-body">
+          <h5 class="card-title">Plan your Outings, in only a few Seconds</h5>
+        </div>
+          <%= image_tag("homeimage.jpg") %>
       </div>
     </div>
+
+
     <div class="col-sm-12 d-flex justify-content-center">
-      <div class="home-sections">
-        <p>"Plan your Outings, in only a few Seconds"</p>
-      </div>
-    </div>
-    <div class="col-sm-12 d-flex justify-content-center">
-      <div class="home-sections">
+      <div>
         <%= link_to 'Start Your Adventure', trips_path, class: "call-to-action" %>
       </div>
     </div>
