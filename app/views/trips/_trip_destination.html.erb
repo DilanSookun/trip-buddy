@@ -1,25 +1,21 @@
-<div class="d-flex justify-content-center align-items-center">
-  <div class="row justify-content-center align-items-center w-100">
-    <div class="col-sm-12 d-flex justify-content-center">
-      <div class="my-3">
-        <%= image_tag("logo.png", width: "70px", height: "70px") %>
-      </div>
-    </div>
-    <div class="col-sm-12 d-flex justify-content-center">
-      <div class="row">
-        <div class="col-sm-4">
-          <% @trips.map do |trip| %>
-            <ul>
-            <li><%= link_to trip.name, trip_path(trip.id) %></li>
-            <li><%= image_tag(trip.image_url, width: "100px", height: "100px") %></li>
-            </ul>
-          <% end %>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-12 d-flex justify-content-center">
-      <div class="sub-choice">
-        <%= link_to 'return back', :back, class: "glass" %>
-      </div>
+<div id=destinationpage>
+  <div class="slider-container">
+        <% @trips.map do |trip| %>
+      <div class="slide">
+<div class="card" style="width: 18rem;">
+  <%= image_tag(trip.image_url, width: "300px", height: "300px") %>
+  <div class="card-body">
+    <h5> <%= trip.name%> </h5>
+    <p>Price : Rs <%= trip.price %> </p>
+  </div>
+  <div class="card-body">
+    <%= link_to 'More Details', trip_path(trip.id) %>
   </div>
 </div>
+      </div>
+        <% end %>
+    </div> 
+  </div>
+</div>
+
+
