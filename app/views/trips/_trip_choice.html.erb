@@ -1,26 +1,37 @@
 <div class="d-flex justify-content-center align-items-center">
   <div class="row justify-content-center align-items-center w-100">
     <div class="col-sm-12 d-flex justify-content-center">
-      <div class="my-3">
-        <%= image_tag("logo.png", width: "70px", height: "70px") %>
-      </div>
+
     </div>
     <div class="col-sm-12 d-flex justify-content-center">
-      <h1>Trips available for you:</h1>
+      <h1 id="title" class= "px-3 py-1">Categories:</h1>
     </div>
-    <div class="col-sm-12 d-flex justify-content-center">
+      
+      <div class="category card" style="width: 18rem;">
+      <%= image_tag("https://res.cloudinary.com/trip-buddy/image/upload/v1629102651/trip%20buddy/illustration/photo-nic-xOigCUcFdA8-unsplash_iyl8hx.jpg",height: "180") %>
+  <div class="card-body">
+<%= link_to 'Hiking', { controller: 'trips', action: 'trip_category', category: 'hiking' }, class: "category" %>
+  </div>
+</div>
+
+<div class="category card" style="width: 18rem;">
+ <%= image_tag("https://res.cloudinary.com/trip-buddy/image/upload/v1629102643/trip%20buddy/illustration/noah-buscher-vsBkQ0Lc3zs-unsplash_my6nso.jpg",height: "180") %>
+
+  <div class="card-body">
+<%= link_to 'Sight Seeing', { controller: 'trips', action: 'trip_category', category: 'sight-seeing' }, class: "category" %>
+  </div>
+</div>
+
+<div class="category card" style="width: 18rem;">
+  <%= image_tag("https://res.cloudinary.com/trip-buddy/image/upload/v1629102623/trip%20buddy/illustration/ivan-ragozin-o9oQaOGpLz0-unsplash_jrpl7b.jpg",height: "180") %>
+
+  <div class="card-body">
+<%= link_to 'Sea Cruising', { controller: 'trips', action: 'trip_category', category: 'sea-cruising' }, class: "category" %>
+  </div>
+</div>
+
       <div class="sub-category">
-        <%= link_to 'Hiking', { controller: 'trips', action: 'trip_category', category: 'hiking' }, class: "glass" %>
-      </div>
-      <div class="sub-category">
-        <%= link_to 'Sight Seeing', { controller: 'trips', action: 'trip_category', category: 'sight-seeing' }, class: "glass" %>
-      </div>
-    </div>
-      <div class="sub-category">
-        <%= link_to 'Sea Cruising', { controller: 'trips', action: 'trip_category', category: 'sea-cruising' }, class: "glass" %>
-      </div>
-      <div class="sub-category">
-        <%= link_to 'return to home', root_path, class: "glass" %>
+        <%= link_to 'Back', trips_path, class: "returnbtn"%>
       </div>
   </div>
 </div>
