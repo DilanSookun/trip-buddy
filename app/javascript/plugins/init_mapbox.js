@@ -14,11 +14,11 @@ const initMapbox = () => {
 //     map.fitBounds(bounds, { padding: 0, maxZoom: 10, duration: 0 });
 //   };
 
-//   // const fitMapToMarkers = (map, markers) => {
-//   //   const bounds = new mapboxgl.LngLatBounds();
-//   //   markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
-//   //   map.fitBounds(bounds, { padding: 0, maxZoom: 10, duration: 0 });
-//   // };
+  // // const fitMapToMarkers = (map, markers) => {
+  //   const bounds = new mapboxgl.LngLatBounds();
+  // //   markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
+  //   map.fitBounds(bounds, { padding: 0, maxZoom: 10, duration: 0 });
+  // // };
   
 //   const mapElement = document.getElementById('map');
 
@@ -69,39 +69,50 @@ const initMapbox = () => {
 //     );
 //    }
 
+const mapElement = document.getElementById('map');
 
 
 
 
-  const mapElement = document.getElementById('map');
 
 
-    // START
-    mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
-    var map = new mapboxgl.Map({
-      container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v10',
-      center: [-122.662323, 45.523751], // starting position
-      zoom: 12
-    });
-    // set the bounds of the map
-    var bounds = [[-123.069003, 45.395273], [-122.303707, 45.612333]];
-    map.setMaxBounds(bounds);
-    
-    // initialize the map canvas to interact with later
-    var canvas = map.getCanvasContainer();
-    
-    // an arbitrary start will always be the same
+// START
+const markers = JSON.parse(mapElement.dataset.markers);
+mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
+console.log(markers[0].lat)
+var map = new mapboxgl.Map({
+  container: 'map',
+  style: 'mapbox://styles/mapbox/streets-v10',
+  center: [ markers[0].lng, markers[0].lat], // starting position
+  zoom: 12
+});
+// set the bounds of the map
+var bounds = [[54.5606, -21.1963], [ 60.9866, -18.1963]];
+map.setMaxBounds(bounds);
+
+// initialize the map canvas to interact with later
+var canvas = map.getCanvasContainer();
+let pointercoords = {}
+let x = 0
+markers.forEach((pointer) => {
+  const popup = new mapboxgl.Popup().setHTML(pointer.info_window);
+  new mapboxgl.Marker()
+    .setLngLat([ pointer.lng, pointer.lat ])
+    .setPopup(popup)
+    .addTo(map);
+    pointercoords[x] = [pointer.lng, pointer.lat];
+    x += 1
+  });
+// an arbitrary start will always be the same
     // only the end or destination will change
-    var start = [-122.662323, 45.523751];
-    
+    var start = [pointercoords[0][0], pointercoords[0][1]];
     // create a function to make a directions request
 function getRoute(end) {
   // make a directions request using cycling profile
   // an arbitrary start will always be the same
   // only the end or destination will change
-  var start = [-122.662323, 45.523751];
-  var url = 'https://api.mapbox.com/directions/v5/mapbox/cycling/' + start[0] + ',' + start[1] + ';' + end[0] + ',' + end[1] + '?steps=false&geometries=geojson&access_token=' + mapboxgl.accessToken;
+  var start = [pointercoords[0][0], pointercoords[0][1]];
+  var url = 'https://api.mapbox.com/directions/v5/mapbox/driving/' + start[0] + ',' + start[1] + ';' + end[0] + ',' + end[1] + '?steps=false&geometries=geojson&access_token=' + mapboxgl.accessToken;
 
   // make an XHR request https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
   var req = new XMLHttpRequest();
@@ -181,9 +192,12 @@ map.on('load', function() {
       'circle-color': '#3887be'
     }
   });
-  map.on('click', function(e) {
-    console.log('hello')
-    var coordsObj = e.lngLat;
+  // map.on('click', function(e) {
+// var coordsObj = e.lngLat;
+    var coordsObj = {
+      lat: pointercoords[1][0],
+      lng: pointercoords[1][1]
+    }
     canvas.style.cursor = '';
     var coords = Object.keys(coordsObj).map(function(key) {
       return coordsObj[key];
@@ -227,7 +241,19 @@ map.on('load', function() {
       });
     }
     getRoute(coords);
-  });
+    map.addControl(
+      new mapboxgl.GeolocateControl({
+      positionOptions: {
+      enableHighAccuracy: true
+      },
+      // When active the map will receive updates to the device's location as it changes.
+      trackUserLocation: true,
+      // Draw an arrow next to the location dot to indicate which direction the device is heading.
+      showUserHeading: true,
+      showUserLocation: true
+    })
+    );
+  // });
 });
 
 //     // END
