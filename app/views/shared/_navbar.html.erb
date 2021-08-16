@@ -1,0 +1,9 @@
+  <div class="navbar d-flex justify-content-around fixed-bottom">
+      <%= link_to "/" do %>
+      <i class="fas fa-home home-icon"></i>
+      <% end %> 
+      <%= link_to "/" do %>
+      <%= image_tag("logo.png", width:"40px") %> 
+      <%end %>
+      <%= link_to "Login", new_user_session_path %>
+  </div>

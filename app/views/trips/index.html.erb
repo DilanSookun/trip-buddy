@@ -4,31 +4,22 @@
      <div class="col-sm-12 d-flex justify-content-center">
       <div class="card banner" style="width: 18rem;">
         <%= image_tag("time.jpg") %>
-          <div class="card-body">
+          <div class="carded-body ">
               <h5 class="banner-title">Choose the time of your adventure</h5>
           </div>
-      <div class="card-body">
+      <div class="carded-body d-flex flex-column align-items-center justify-content-around">
           <div class="sub-choice">
-            <div>
-            <%= link_to 'Day', { controller: 'trips', action: 'trip_choice', choice: 'day' }, class: "choicebtn" %>
-            <%= cl_image_tag("https://res.cloudinary.com/trip-buddy/image/upload/v1628841571/trip%20buddy/sun_ssjdiw.png", width: "30px", height: "30px",  class: "icon") %>
+            <div class="choicebtn  d-flex justify-content-around align-items-center">
+            <%= link_to 'Day', { controller: 'trips', action: 'trip_choice', choice: 'day' } %>
+            <%= cl_image_tag("https://res.cloudinary.com/trip-buddy/image/upload/v1628841571/trip%20buddy/sun_ssjdiw.png", width: "60px", height: "60px", class: "icon") %>
             </div>
           </div>
           <div class="sub-choice">
-            <div>
-            <%= link_to 'Night', { controller: 'trips', action: 'trip_choice', choice: 'night' }, class: "choicebtn" %>
-            <%= cl_image_tag("https://res.cloudinary.com/trip-buddy/image/upload/v1628841570/trip%20buddy/moon_3_v7glu9.jpg", width: "30px", height: "30px",  class: "icon") %>
+            <div class="choicebtn d-flex justify-content-around align-items-center">
+            <%= link_to 'Night', { controller: 'trips', action: 'trip_choice', choice: 'night' } %>
+            <%= cl_image_tag("https://res.cloudinary.com/trip-buddy/image/upload/v1628841570/trip%20buddy/moon_3_v7glu9.jpg", width: "60px", height: "60px",  class: "icon") %>
             </div>
           </div>
       </div>
   </div>
 </div>
-
-<div class="col-sm-12 d-flex justify-content-center">
-  <div class="sub-choice">
-    <%= link_to 'Return to Home', root_path, class: "returnbtn" %>
-  </div>
-</div>
-
-
-
