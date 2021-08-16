@@ -29,6 +29,7 @@ const initMapbox = () => {
       });
 
     fitMapToMarkers(map, markers);
+    
 
     map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
       mapboxgl: mapboxgl }));
@@ -45,12 +46,6 @@ const initMapbox = () => {
       })
     );
 
-    map.addControl(
-      new MapboxDirections({
-      accessToken: mapboxgl.accessToken
-      }),
-      'bottom-right'
-      );
   }
 };
 
