@@ -1,12 +1,15 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+.navbar{
+  // background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.57) 0%, rgba(75, 83, 124, 0.499938) 0.01%, rgba(145, 137, 132, 0) 0.02%, rgba(145, 137, 132, 0) 100%);
+  // background-blend-mode: difference;
+  background: linear-gradient(180deg, rgba(192, 179, 158, 0.08) 21.67%, rgba(237, 220, 194, 0.91) 100%);
+
+  list-style-type: none;
+  border-radius: 15px 15px 0px 0px ;
+  box-shadow: 0px 0px 2px 5px rgb(214, 193, 175);
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.home-icon{
+  font-size: 30px;
+  color: burlywood;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
