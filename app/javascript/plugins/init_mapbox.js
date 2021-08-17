@@ -53,8 +53,8 @@ const initMapbox = () => {
 //     // fitMapToMarkers(map, markers);
     
 
-//     map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
-//       mapboxgl: mapboxgl }));
+    // map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
+    //   mapboxgl: mapboxgl }));
 
 //     map.addControl(
 //       new mapboxgl.GeolocateControl({
@@ -254,10 +254,10 @@ const xyz = (coordsObj) => {
     );
   }
 
-  // xyz({
-  //   lat: pointercoords[1][0],
-  //   lng: pointercoords[1][1]
-  // })
+  xyz({
+    lat: pointercoords[1][0],
+    lng: pointercoords[1][1]
+  })
   // xyz({
   //   lat: pointercoords[2][0],
   //   lng: pointercoords[2][1]
