@@ -5,7 +5,7 @@
     border-radius: 25px;
     margin-top: 20px;
     box-shadow: 1px 1px 2px #865A3F;
-    opacity: 0.85;
+    opacity: 0.65;
 }
 
 .category{
@@ -20,7 +20,7 @@
     }
   }
   
-  a {
+a {
   font-family: 'Bebas Neue', cursive;
     font-size: 25px;
     color:  #513627;
@@ -35,3 +35,15 @@
         font-weight: 400;
       }
   }
+
+.card-body a {
+  margin: 1rem;
+}
+
+  #categorypage {
+    box-sizing: border-box;
+    margin-bottom: 3rem;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}

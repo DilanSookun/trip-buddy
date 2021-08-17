@@ -1,14 +1,19 @@
 <div id=destinationpage>
+  <div class="col-sm-12 d-flex justify-content-center">
+    <h1 id="title" class= "px-3 py-1">Destinations:</h1>
+  </div>
   <div class="slider-container">
     <% @trips.map do |trip| %>
       <div class="slide">
-        <div class="card" style="width: 18rem;">
+        <div class="card d-flex flex-column align-items-center text-center " style="width: 18rem;">
           <%= image_tag(trip.image_url, width: "300px", height: "300px") %>
           <div class="card-body">
-            <h5> <%= trip.name%> </h5>
-            <p>Price : Rs <%= trip.price %> </p>
+            <div class = "details">
+              <h5> <%= trip.name%> </h5>
+              <p>Price : Rs <%= trip.price %> </p>
+            </div>
           </div>
-          <div class="card-body">
+          <div class="link card-body">
             <%= link_to 'More Details', trip_path(trip.id) %>
           </div>
         </div>
@@ -17,4 +22,8 @@
   </div>
 </div>
 
-
+<div class ="indicator d-flex flex-column align-items-center text-center">
+  <i class="fas fa-hand-pointer"></i>
+  <i class="fas fa-arrows-alt-h"></i>
+  <p>Swipe to view </p>
+</div>
