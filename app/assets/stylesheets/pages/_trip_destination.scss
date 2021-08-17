@@ -1,11 +1,12 @@
 #destinationpage {
     box-sizing: border-box;
     margin: 0;
+    margin-top: 10px;
     padding: 0;
-    height: 100%;
+    height: 100vh;
     width: 100%;
-    overflow: hidden;
     line-height: 1.7;
+    overflow: hidden;
 }
 
 .slider-container {
@@ -45,7 +46,6 @@
 }
 
 .indicator {
-    margin: 2rem;
     opacity: 0.55;
 }
 

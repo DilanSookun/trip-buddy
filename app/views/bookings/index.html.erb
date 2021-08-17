@@ -1,5 +1,5 @@
-<h1>My booking list</h1>
-<div class="d-flex row justify-content-center">
+<div class="d-flex row justify-content-center w-100 m-0">
+  <h3>My booking list</h3>
   <% @bookings.each do |booking| %>
     <% if (booking.user_id == current_user.id) %>
       <div class="col-lg-2 h-5 justify-content-center m-2">
@@ -13,7 +13,7 @@
             <% end %>
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item"> Location:</li>
+            <li class="list-group-item"> Location: <%= booking.trip.address %></li>
             <li class="list-group-item"> schedule date: <%= booking.schedule_date %></li>
             <li class="list-group-item"> Price: Rs<%= booking.trip.price.to_i %></li>
           </ul>
@@ -22,6 +22,6 @@
     <% end %>
   <% end %>
   <div class="card-body d-flex justify-content-center">
-    <%= link_to "Back To Trips List",  trips_path, class: "btn btn-secondary"%>
+    <%= link_to "Back To Trips List", trips_path, class: "btn btn-secondary"%>
   </div>
 </div>
