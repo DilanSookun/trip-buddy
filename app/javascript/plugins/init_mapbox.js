@@ -84,7 +84,7 @@ var map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/mapbox/streets-v10',
   center: [ markers[0].lng, markers[0].lat], // starting position
-  zoom: 12
+  zoom: 13
 });
 // set the bounds of the map
 var bounds = [[54.5606, -21.1963], [ 60.9866, -18.1963]];
