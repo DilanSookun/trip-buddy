@@ -10,14 +10,16 @@
       <div class="carded-body d-flex flex-column align-items-center justify-content-around">
           <div class="sub-choice">
             <div class="choicebtn  d-flex justify-content-around align-items-center">
-            <%= link_to 'Day', { controller: 'trips', action: 'trip_choice', choice: 'day' } %>
-            <%= cl_image_tag("https://res.cloudinary.com/trip-buddy/image/upload/v1628841571/trip%20buddy/sun_ssjdiw.png", width: "60px", height: "60px", class: "icon") %>
+            <%= link_to(controller: 'trips', action: 'trip_choice', choice: 'day') do %>
+              <%= cl_image_tag("https://res.cloudinary.com/trip-buddy/image/upload/v1628841571/trip%20buddy/sun_ssjdiw.png", width: "60px", height: "60px", class: "icon") %>
+            <% end %>
             </div>
           </div>
           <div class="sub-choice">
             <div class="choicebtn d-flex justify-content-around align-items-center">
-            <%= link_to 'Night', { controller: 'trips', action: 'trip_choice', choice: 'night' } %>
-            <%= cl_image_tag("https://res.cloudinary.com/trip-buddy/image/upload/v1628841570/trip%20buddy/moon_3_v7glu9.jpg", width: "60px", height: "60px",  class: "icon") %>
+            <%= link_to(controller: 'trips', action: 'trip_choice', choice: 'night') do %>
+              <%= cl_image_tag("https://res.cloudinary.com/trip-buddy/image/upload/v1628841570/trip%20buddy/moon_3_v7glu9.jpg", width: "60px", height: "60px",  class: "icon") %>
+            <% end %>
             </div>
           </div>
       </div>

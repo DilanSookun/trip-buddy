@@ -1,4 +1,13 @@
   <div class="navbar d-flex justify-content-around fixed-bottom">
+    <% if user_signed_in? %>
+      <%= link_to "/" do %>
+        <i class="fas fa-home home-icon"></i>
+      <% end %> 
+      <%= link_to "/" do %>
+        <%= image_tag("logo.png", width:"40px") %> 
+      <%end %>
+      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+    <% else %>
       <%= link_to "/" do %>
       <i class="fas fa-home home-icon"></i>
       <% end %> 
@@ -6,4 +15,5 @@
       <%= image_tag("logo.png", width:"40px") %> 
       <%end %>
       <%= link_to "Login", new_user_session_path %>
+    <% end %>
   </div>
