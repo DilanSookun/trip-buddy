@@ -85,7 +85,7 @@ setSliderPosition()
 
 function setSliderPosition() {
 slider.style.transform = `translateX(${currentTranslate}px)`
- };
+};
 }
 
 export { initSlider };
