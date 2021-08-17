@@ -1,20 +1,19 @@
 <div id=destinationpage>
   <div class="slider-container">
-        <% @trips.map do |trip| %>
+    <% @trips.map do |trip| %>
       <div class="slide">
-<div class="card" style="width: 18rem;">
-  <%= image_tag(trip.image_url, width: "300px", height: "300px") %>
-  <div class="card-body">
-    <h5> <%= trip.name%> </h5>
-    <p>Price : Rs <%= trip.price %> </p>
-  </div>
-  <div class="card-body">
-    <%= link_to 'More Details', trip_path(trip.id) %>
-  </div>
-</div>
+        <div class="card" style="width: 18rem;">
+          <%= image_tag(trip.image_url, width: "300px", height: "300px") %>
+          <div class="card-body">
+            <h5> <%= trip.name%> </h5>
+            <p>Price : Rs <%= trip.price %> </p>
+          </div>
+          <div class="card-body">
+            <%= link_to 'More Details', trip_path(trip.id) %>
+          </div>
+        </div>
       </div>
-        <% end %>
-    </div> 
+    <% end %>
   </div>
 </div>
 

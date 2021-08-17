@@ -53,8 +53,8 @@ const initMapbox = () => {
 //     // fitMapToMarkers(map, markers);
     
 
-//     map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
-//       mapboxgl: mapboxgl }));
+    // map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
+    //   mapboxgl: mapboxgl }));
 
 //     map.addControl(
 //       new mapboxgl.GeolocateControl({
@@ -79,7 +79,7 @@ const mapElement = document.getElementById('map');
 // START
 const markers = JSON.parse(mapElement.dataset.markers);
 mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
-console.log(markers[0].lat)
+
 var map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/mapbox/streets-v10',
@@ -192,12 +192,10 @@ map.on('load', function() {
       'circle-color': '#3887be'
     }
   });
-  // map.on('click', function(e) {
-// var coordsObj = e.lngLat;
-    var coordsObj = {
-      lat: pointercoords[1][0],
-      lng: pointercoords[1][1]
-    }
+
+const xyz = (coordsObj) => {
+
+
     canvas.style.cursor = '';
     var coords = Object.keys(coordsObj).map(function(key) {
       return coordsObj[key];
@@ -241,6 +239,7 @@ map.on('load', function() {
       });
     }
     getRoute(coords);
+    
     map.addControl(
       new mapboxgl.GeolocateControl({
       positionOptions: {
@@ -253,7 +252,16 @@ map.on('load', function() {
       showUserLocation: true
     })
     );
-  // });
+  }
+
+  xyz({
+    lat: pointercoords[1][0],
+    lng: pointercoords[1][1]
+  })
+  // xyz({
+  //   lat: pointercoords[2][0],
+  //   lng: pointercoords[2][1]
+  // })
 });
 
 //     // END

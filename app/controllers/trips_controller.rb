@@ -34,6 +34,12 @@ class TripsController < ApplicationController
                   lng: @trip.stop_1_long,
                   info_window: render_to_string(partial: "info_window2", locals: { trip: @trip }),
                   image_url: helpers.asset_url('background.jpg')
+                },
+                {
+                  lat: @trip.stop_2_lat,
+                  lng: @trip.stop_2_long,
+                  info_window: render_to_string(partial: "info_window3", locals: { trip: @trip }),
+                  image_url: helpers.asset_url('background.jpg')
                 }]
   end
 
