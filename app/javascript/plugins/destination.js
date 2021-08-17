@@ -81,12 +81,11 @@ function setPositionByIndex() {
 currentTranslate = currentIndex * -window.innerWidth
 prevTranslate = currentTranslate
 setSliderPosition()
-}
+};
 
 function setSliderPosition() {
 slider.style.transform = `translateX(${currentTranslate}px)`
-}
-
+ };
 }
 
 export { initSlider };
