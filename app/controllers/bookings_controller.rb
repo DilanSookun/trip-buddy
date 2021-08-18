@@ -16,13 +16,11 @@ class BookingsController < ApplicationController
                   lat: @booking.trip.stop_1_lat,
                   lng: @booking.trip.stop_1_long,
                   info_window: render_to_string(partial: "info_window2", locals: { trip: @booking }),
-                  image_url: helpers.asset_url('background.jpg')
                 },
                 {
                   lat: @booking.trip.stop_2_lat,
                   lng: @booking.trip.stop_2_long,
                   info_window: render_to_string(partial: "info_window3", locals: { trip: @booking }),
-                  image_url: helpers.asset_url('background.jpg')
                 }]
   end
 
