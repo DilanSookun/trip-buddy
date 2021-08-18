@@ -5,76 +5,7 @@ import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import { initDirections } from './init_directions';
 
 const initMapbox = () => {
-//   // initDirections()
-//   // console.log(waypoints);
-
-//   const fitMapTowaypoints = (map, waypoints) => {
-//     const bounds = new mapboxgl.LngLatBounds();
-//     waypoints.forEach(waypoints => bounds.extend([ waypoints.lng, waypoints.lat ]));
-//     map.fitBounds(bounds, { padding: 0, maxZoom: 10, duration: 0 });
-//   };
-
-  // // const fitMapToMarkers = (map, markers) => {
-  //   const bounds = new mapboxgl.LngLatBounds();
-  // //   markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
-  //   map.fitBounds(bounds, { padding: 0, maxZoom: 10, duration: 0 });
-  // // };
-  
-//   const mapElement = document.getElementById('map');
-
-//   if (mapElement) { // only build a map if there's a div#map to inject into
-//     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
-//     const map = new mapboxgl.Map({
-//       container: 'map',
-//       style: 'mapbox://styles/mapbox/streets-v10'
-//     });
-
-//     const waypoints = JSON.parse(mapElement.dataset.markers);
-//     waypoints.forEach((waypoint) => {
-//       const popup = new mapboxgl.Popup().setHTML(waypoint.info_window);
-//       new mapboxgl.Marker()
-//         .setLngLat([ waypoint.lng, waypoint.lat ])
-//         .setPopup(popup)
-//         .addTo(map);
-//       });
-
-
-//     // const markers = JSON.parse(mapElement.dataset.markers);
-//     // markers.forEach((marker) => {
-//     //   const popup = new mapboxgl.Popup().setHTML(marker.info_window);
-//     //   new mapboxgl.Marker()
-//     //     .setLngLat([ marker.lng, marker.lat ])
-//     //     .setPopup(popup)
-//     //     .addTo(map);
-//     //   });
-
-    
-//     fitMapTowaypoints(map, waypoints);
-//     // fitMapToMarkers(map, markers);
-    
-
-    // map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
-    //   mapboxgl: mapboxgl }));
-
-//     map.addControl(
-//       new mapboxgl.GeolocateControl({
-//       positionOptions: {
-//       enableHighAccuracy: true
-//       },
-//       // When active the map will receive updates to the device's location as it changes.
-//       trackUserLocation: true,
-//       // Draw an arrow next to the location dot to indicate which direction the device is heading.
-//       showUserHeading: true
-//       })
-//     );
-//    }
-
 const mapElement = document.getElementById('map');
-
-
-
-
-
 
 // START
 const markers = JSON.parse(mapElement.dataset.markers);
@@ -103,10 +34,12 @@ markers.forEach((pointer) => {
     pointercoords[x] = [pointer.lng, pointer.lat];
     x += 1
   });
+
 // an arbitrary start will always be the same
-    // only the end or destination will change
-    var start = [pointercoords[0][0], pointercoords[0][1]];
-    // create a function to make a directions request
+// only the end or destination will change
+var start = [pointercoords[0][0], pointercoords[0][1]];
+
+// create a function to make a directions request
 function getRoute(end) {
   // make a directions request using cycling profile
   // an arbitrary start will always be the same
@@ -194,22 +127,20 @@ map.on('load', function() {
   });
 
 const xyz = (coordsObj) => {
-
-
-    canvas.style.cursor = '';
-    var coords = Object.keys(coordsObj).map(function(key) {
-      return coordsObj[key];
-    });
-    var end = {
-      type: 'FeatureCollection',
-      features: [{
-        type: 'Feature',
-        properties: {},
-        geometry: {
-          type: 'Point',
-          coordinates: coords
-        }
+  canvas.style.cursor = '';
+  var coords = Object.keys(coordsObj).map(function(key) {
+    return coordsObj[key];
+  });
+  var end = {
+    type: 'FeatureCollection',
+    features: [{
+      type: 'Feature',
+      properties: {},
+      geometry: {
+        type: 'Point',
+        coordinates: coords
       }
+    }
       ]
     };
     if (map.getLayer('end')) {
@@ -239,19 +170,31 @@ const xyz = (coordsObj) => {
       });
     }
     getRoute(coords);
-    
-    map.addControl(
-      new mapboxgl.GeolocateControl({
+    var geolocate = new mapboxgl.GeolocateControl({
       positionOptions: {
-      enableHighAccuracy: true
-      },
-      // When active the map will receive updates to the device's location as it changes.
-      trackUserLocation: true,
-      // Draw an arrow next to the location dot to indicate which direction the device is heading.
-      showUserHeading: true,
-      showUserLocation: true
-    })
-    );
+        enableHighAccuracy: true
+        },
+        // When active the map will receive updates to the device's location as it changes.
+        trackUserLocation: true,
+        // Draw an arrow next to the location dot to indicate which direction the device is heading.
+        showUserHeading: true,
+        showUserLocation: true
+      });
+   console.log(geolocate)
+    map.addControl(geolocate);
+    
+  // });
+    //   new mapboxgl.GeolocateControl({
+    //   positionOptions: {
+    //   enableHighAccuracy: true
+    //   },
+    //   // When active the map will receive updates to the device's location as it changes.
+    //   trackUserLocation: true,
+    //   // Draw an arrow next to the location dot to indicate which direction the device is heading.
+    //   showUserHeading: true,
+    //   showUserLocation: true
+    // })
+    // );
   }
 
   xyz({
