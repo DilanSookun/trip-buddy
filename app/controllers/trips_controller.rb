@@ -9,8 +9,7 @@ class TripsController < ApplicationController
       {
         lat: trip.latitude,
         lng: trip.longitude,
-        info_window: render_to_string(partial: "info_window_index", locals: { trip: trip }),
-        image_url: helpers.asset_url('background.jpg')
+        info_window: render_to_string(partial: "info_window_index", locals: { trip: trip })
       }
     end
   end
@@ -25,20 +24,17 @@ class TripsController < ApplicationController
     @markers = [{
       lat: @trip.latitude,
       lng: @trip.longitude,
-      info_window: render_to_string(partial: "info_window_show", locals: { trip: @trip }),
-      image_url: helpers.asset_url('background.jpg')
+      info_window: render_to_string(partial: "info_window_show", locals: { trip: @trip })
     },
     {
       lat: @trip.stop_1_lat,
       lng: @trip.stop_1_long,
-      info_window: render_to_string(partial: "info_window2", locals: { trip: @trip }),
-      image_url: helpers.asset_url('background.jpg')
+      info_window: render_to_string(partial: "info_window2", locals: { trip: @trip })
     },
     {
       lat: @trip.stop_2_lat,
       lng: @trip.stop_2_long,
-      info_window: render_to_string(partial: "info_window3", locals: { trip: @trip }),
-      image_url: helpers.asset_url('background.jpg')
+      info_window: render_to_string(partial: "info_window3", locals: { trip: @trip })
     }]
   end
 
