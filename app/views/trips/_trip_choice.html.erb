@@ -4,6 +4,10 @@
       <div class="col-sm-12 d-flex justify-content-center">
         <h1 id="title" class= "px-3 py-1">Categories</h1>
       </div>
+      <%= link_to trip_path(@random.id) do %>
+      <h4>Suggested Trip:</h4>
+       <h5 class="btn btn-success"><%= @random.name %></h5>
+      <% end %>
       <div class="category card" style="width: 18rem;" >
         <%= image_tag("https://res.cloudinary.com/trip-buddy/image/upload/v1629102651/trip%20buddy/illustration/photo-nic-xOigCUcFdA8-unsplash_iyl8hx.jpg",height: "200") %>
           <div class="card-body d-flex justify-content-center p-0 m-0">
