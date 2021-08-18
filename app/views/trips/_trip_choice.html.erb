@@ -1,5 +1,5 @@
 <div id="categorypage">
-<div class="d-flex col-sm-12 justify-content-center align-items-center">
+  <div class="d-flex col-sm-12 justify-content-center align-items-center">
     <div class="row justify-content-center align-items-center w-100">
           <div class="col-sm-12 d-flex justify-content-center">
           <h1 id="title" class= "px-3 py-1">Categories</h1>
@@ -7,21 +7,22 @@
       <div class="category card" style="width: 18rem;" >
         <%= image_tag("https://res.cloudinary.com/trip-buddy/image/upload/v1629102651/trip%20buddy/illustration/photo-nic-xOigCUcFdA8-unsplash_iyl8hx.jpg",height: "200") %>
           <div class="card-body d-flex justify-content-center p-0 m-0">
-          <%= link_to 'Hiking', { controller: 'trips', action: 'trip_category', category: 'hiking' }, class: "category" %>
-          </div>
-      </div>
-      <div class="category card" style="width: 18rem;">
-        <%= image_tag("https://res.cloudinary.com/trip-buddy/image/upload/v1629102643/trip%20buddy/illustration/noah-buscher-vsBkQ0Lc3zs-unsplash_my6nso.jpg",height: "200") %>
-          <div class="card-body d-flex justify-content-center p-0 m-0">
-          <%= link_to 'Sight Seeing', { controller: 'trips', action: 'trip_category', category: 'sight-seeing' }, class: "category" %>
-          </div>
-      </div>
-      <div class="category card" style="width: 18rem;">
-        <%= image_tag("https://res.cloudinary.com/trip-buddy/image/upload/v1629102623/trip%20buddy/illustration/ivan-ragozin-o9oQaOGpLz0-unsplash_jrpl7b.jpg",height: "200") %>
-          <div class="card-body d-flex justify-content-center p-0 m-0">
-          <%= link_to 'Sea Cruising', { controller: 'trips', action: 'trip_category', category: 'sea-cruising' }, class: "category" %>
+          <%= link_to 'Hiking', { controller: 'trips', action: 'trip_category', category: 'hiking', choice: @choice }, class: "category" %>
           </div>
       </div>
     </div>
+    <div class="category card" style="width: 18rem;">
+      <%= image_tag("https://res.cloudinary.com/trip-buddy/image/upload/v1629102643/trip%20buddy/illustration/noah-buscher-vsBkQ0Lc3zs-unsplash_my6nso.jpg",height: "200") %>
+      <div class="card-body d-flex justify-content-center p-0 m-0">
+        <%= link_to 'Sight Seeing', { controller: 'trips', action: 'trip_category', category: 'sight-seeing', choice: @choice }, class: "category" %>
+      </div>
+    </div>
+    <div class="category card" style="width: 18rem;">
+      <%= image_tag("https://res.cloudinary.com/trip-buddy/image/upload/v1629102623/trip%20buddy/illustration/ivan-ragozin-o9oQaOGpLz0-unsplash_jrpl7b.jpg",height: "200") %>
+      <div class="card-body d-flex justify-content-center p-0 m-0">
+        <%= link_to 'Sea Cruising', { controller: 'trips', action: 'trip_category', category: 'sea-cruising', choice: @choice }, class: "category" %>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
+
