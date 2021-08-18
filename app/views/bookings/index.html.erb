@@ -2,7 +2,7 @@
   <h1 id="bookingtitle" class= "px-3 py-1">My Booking list</h1>
 </div>
 
-<div class="bookingcards d-flex row justify-content-center">
+<div class="bookingcards d-flex row justify-content-center mx-0">
   <% @bookings.each do |booking| %>
     <% if (booking.user_id == current_user.id) %>
       <div class="booking card" style="width: 18rem;">
