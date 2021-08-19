@@ -1,2 +1,3 @@
-<h2><%= @trip.name %></h2>
+<p><em><%= @trip.name %></em></p>
+<%= image_tag(@trip.image_url, height: 200, width: 200, style: "border-radius: 20px;") %>
 <p><%= @trip.address %></p>
