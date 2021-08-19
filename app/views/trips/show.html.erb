@@ -20,7 +20,7 @@
         </div>
       </div>
       <div class="col-sm-12 d-flex justify-content-center">
-        <div class="sub-choice">
+        <div class="sub-choice text-center">
           <%= simple_form_for(@booking) do |f| %>
             <%= f.hidden_field :total_price, :value => @trip.price %>
             <%= f.hidden_field :trip_id, :value => @trip.id %>
