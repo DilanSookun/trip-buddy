@@ -1,2 +1,4 @@
-<p><%= @booking.trip.stop_2 %></p>
-
+<% if !@booking.trip.stop_2.nil? %>
+    <p><%= @booking.trip.stop_2 %></p>
+    <%= image_tag(@booking.trip.stop_2_img_url, height: 200, width: 200, style: "border-radius: 20px;") %>
+<% end %>
