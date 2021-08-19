@@ -1,3 +1,5 @@
+<% if !@trip.stop_2_img_url.nil? %>
 <h5>Suggested stop</h5>
 <p><%= @trip.stop_1 %></p>
 <%= image_tag(@trip.stop_1_img_url, height: 200, width: 200, style: "border-radius: 20px;") %>
+<% end %>
