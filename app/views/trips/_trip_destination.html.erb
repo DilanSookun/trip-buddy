@@ -2,14 +2,14 @@
   <div class="col-sm-12 d-flex justify-content-center ">
     <h1 id="title" class= "px-3 py-1 mb-0">Destinations:</h1>
   </div>
-  <div class="slider-container my-0">
+  <div class="slider-container my-0 mx-4">
     <% @trips.map do |trip| %>
       <div class="slide">
         <div class="card d-flex flex-column align-items-center text-center " style="width: 18rem;">
           <%= image_tag(trip.image_url, width: "300px", height: "300px") %>
           <div class="card-body">
             <div class = "details">
-              <h5 class="name"> <%= trip.name%> </h5>
+              <h5 class="name"> <%= trip.name %> </h5>
               <p>Price : Rs <%= trip.price %> </p>
             </div>
           </div>
