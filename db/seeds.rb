@@ -1,3 +1,4 @@
+Booking.destroy_all
 Trip.destroy_all
 
 # hiking_trip1 =
