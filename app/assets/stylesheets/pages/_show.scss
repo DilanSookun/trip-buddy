@@ -29,7 +29,11 @@ details p {
 }
 
 .bookingcards {
+    border-radius: 25px;
     margin-bottom: 100px;
 }
 
+.card-header {
+    border-radius: 25px 25px 0 0 !important;
+}
 
