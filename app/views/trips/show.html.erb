@@ -18,7 +18,7 @@
           <h5><strong> Price: </strong> Rs <%= @trip.price %></h5>
           </div>
         </div>
-      </div>  
+      </div>
       <div class="col-sm-12 d-flex justify-content-center">
         <div class="sub-choice">
           <%= simple_form_for(@booking) do |f| %>
@@ -28,7 +28,7 @@
                         start_year: Date.today.year,
                         end_year: Date.today.year+1, discard_day: false,
                         order: [:day, :month, :year] %>
-            <%= f.button :submit, class: "btn btn-brown w-100 mb-3", value: "Confirm Booking" %>
+            <%= f.button :submit, class: "btn btn-brown w-100 mb-3", value: "Book now" %>
           <% end %>
         </div>
       </div>
