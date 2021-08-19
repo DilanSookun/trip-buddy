@@ -1,16 +1,30 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 Trip.destroy_all
+
+hiking_trip1 =
+{ name:"Le Pouce" , 
+  description:"This mountain is the third highest in Mauritius, peaking at 812m, located in the North West of the island between the Pieter Both and the Signal mountain.From the peak you will have a 360 degree view. The sight of the northern part of the island is splendid, with a beautiful view of the northern small islands of Mauritius - Flat Island, Round Island and Snake Island. It also offers one of the most beautiful views of the capital: Port Louis, as well as Moka and the high grounds of Plain Wilhems. Le Pouce is known as ‘The Thumb’ peak. The first person to climb Le Pouce is accredited as Charles Darwin.",
+  address: ,
+  longitude:"57.5222",
+  latitude:"-20.1950",
+  duration:,
+  image_url:,
+  price: 
+  stop_1:,
+  stop_1_lat:,
+  stop_1_long:,
+  stop_1_img_url:,
+  stop_2:,
+  stop_2_lat:,
+  stop_2_long:,
+  stop_2_img_url:,
+  choice:"day",
+  category:"hiking"
+  }
 
   hiking_trip2 =
 { name: "Le Morne Brabant", 
   description:"Le Morne Brabant is a peninsula at the extreme southwestern tip of the Indian Ocean island of Mauritius on the western side of the island.",
-  address:"afgsd" ,
+  address:"Le Morne" ,
   longitude:"57.3082",
   latitude:"-20.4563",
   duration:"3 hr",
@@ -27,6 +41,7 @@ Trip.destroy_all
   choice:"day",
   category:"hiking"
   }
+
 hiking_trip3 =
 { name: "Pieter Both", 
   description:"Pieter Both is the second highest mountain of Mauritius, at 820 metres tall. The mountain is shorter that Piton de la Petite Rivière Noire by eight meters. It is named after Pieter Both, the first Governor-General of the Dutch East Indies. It is located in the Moka Range",
@@ -43,7 +58,70 @@ hiking_trip3 =
   choice:"day",
   category:"hiking"
 }
-  [hiking_trip2, hiking_trip3 ].each do |attributes|
+
+hiking_trip4 =
+{ name:"The Trois Mamelles" , 
+  description:"This atypical solid mass on the West of the island with three distinct sections is peaking at approximately 500m.Climbing the central peak is done in two parts: initially on the path which goes through the bush while the second part is definitely more exposed.The drops on both sides are rather impressive. Frequently the adrenalin peaks up as you approach the top. The panoramic view is awesome and most rewarding for this challenging climb.Three hours are required to accomplish this outstanding hike.",
+  address: ,
+  longitude:"57.44833",
+  latitude:"-20.31022",
+  duration:,
+  image_url:,
+  price: 
+  stop_1:,
+  stop_1_lat:,
+  stop_1_long:,
+  stop_1_img_url:,
+  stop_2:,
+  stop_2_lat:,
+  stop_2_long:,
+  stop_2_img_url:,
+  choice:"day",
+  category:"hiking"
+  }
+
+  hiking_trip5 =
+{ name:"The Corps de Garde" , 
+  description:"An excursion whose climax peaks at 780m, with an impressive panoramic view of the island as far as the eye can see. The path proceeds through basalt rock, steep enough to make use of your hands, and at other times through the bush.The drops are impressive although remote, which gives character to this excursion.Seen from above, the urban civilization in all its extent presents an overall view of Curepipe, Vacoas, Quatre Bornes, Rose Hill, Beau Bassin and les Pailles. On the other side, towards the West, a green stretch of mountains appears.The most well known are: Trois Mamelles, Rempart, Tourelle de Tamarin, Black River Piton, and further away the mountain of Morne Brabant standing majestically. This is a more adventures trek which will take at least 4 hours to complete.",
+  address: ,
+  longitude:"57.4456",
+  latitude:"-20.2569",
+  duration:,
+  image_url:,
+  price: 
+  stop_1:,
+  stop_1_lat:,
+  stop_1_long:,
+  stop_1_img_url:,
+  stop_2:,
+  stop_2_lat:,
+  stop_2_long:,
+  stop_2_img_url:,
+  choice:"day",
+  category:"hiking"
+  }
+
+  hiking_trip6 =
+  { name:"The Tourelle de Tamarin" , 
+    description:"This mountain of 548m offers the best view of the entire western area of Mauritius.This is a private property, the land belongs to the Maingard family. The climb starts at the sea level on the northern slope of the mountain.The path to the top of the mountain is rather steep, except for a few sections which are ideal for a drink break and for taking some beautiful pictures.Nature is completely well preserved. A beautiful variety of indigenous plants grow here. At the end of the climb you will enjoy the exceptional panorama view of the most beautiful lagoon “les Fonds Blancs” and of the Morne Brabant mountain.",
+    address: ,
+    longitude:"57.37467",
+    latitude:"-20.34703",
+    duration:,
+    image_url:,
+    price: 
+    stop_1:"clear blue sea and white sandy beaches, Blue Bay Marine Park is a must see! There you will find rare corals and fish species in a depth of 5.5 meters.",
+    stop_1_lat:,
+    stop_1_long:,
+    stop_1_img_url:,
+    stop_2:,
+    stop_2_lat:,
+    stop_2_long:,
+    stop_2_img_url:,
+    choice:"day",
+    category:"hiking"
+    }
+  [hiking_trip1, hiking_trip2 ,hiking_trip3,hiking_trip4, hiking_trip5, hiking_trip6 ].each do |attributes|
     trip = Trip.create!(attributes)
     puts "Created #{trip.name}"
   end
@@ -101,6 +179,7 @@ sight_seeing3 = {
   choice:"day",
   category:"sight-seeing"
 }
+
 [sight_seeing1, sight_seeing2, sight_seeing3 ].each do |attributes|
   trip = Trip.create!(attributes)
   puts "Created #{trip.name}"
