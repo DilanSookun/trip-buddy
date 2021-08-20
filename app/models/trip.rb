@@ -1,5 +1,5 @@
 class Trip < ApplicationRecord
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
   has_many :user, through: :bookings
 
   geocoded_by :address
