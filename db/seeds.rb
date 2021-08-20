@@ -129,7 +129,7 @@ hiking_trip3 =
   puts "Finished creating hiking trips!"
 
 sight_seeing1 = {  
-  name:"red-roofed Notre Dame Auxiliatrice",
+  name:"Notre Dame Auxiliatrice",
   description: "Visit the Cap Malheureux which is a fishing village famous for the red-roofed Notre Dame Auxiliatrice.The tour will be conducted in a comfortable air-conditioned car with a professional driver. You will be accompanied by a guide throughout the tour who will tell you interesting stories and facts about the places.",
   address: " Cap Malheureux",
   longitude:"57.6222",

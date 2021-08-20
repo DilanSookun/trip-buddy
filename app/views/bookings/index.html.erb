@@ -1,5 +1,5 @@
 <div class="col-sm-12 d-flex justify-content-center">
-  <h1 id="bookingtitle" class= "px-3 py-1">My Booking list</h1>
+  <h1 id="bookingtitle" class= "px-3 py-1">My Trip list</h1>
 </div>
 
 <div class="bookingcards d-flex row justify-content-center mx-0">
@@ -15,7 +15,7 @@
           <ul class="list-group list-group-flush">
             <li class="list-group-item"> <strong>Location:</strong> <%= booking.trip.address %></li>
             <li class="list-group-item"> <strong>Schedule date:</strong> <%= booking.schedule_date %></li>
-            <li class="list-group-item"> <strong>Price:</strong> Rs<%= booking.trip.price.to_i %></li>
+            <li class="list-group-item"> <strong>Tour guide price:</strong> Rs<%= booking.trip.price.to_i %></li>
             <li class="list-group-item p-0 pt-2 text-center">
               <%= link_to booking_path(booking), method: :delete do %> 
                <i class="fas fa-trash-alt"></i>
