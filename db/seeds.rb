@@ -117,10 +117,10 @@ hiking_trip4 =
     stop_1_lat:'-20.32526407153684', 
     stop_1_long:'57.37781526490857',
     stop_1_img_url:"https://res.cloudinary.com/trip-buddy/image/upload/v1629451801/trip%20buddy/sightseeing/download_1_xmhyam.jpg",
-    stop_2:'Dolphin Encounter Mauritius',
-    stop_2_lat:'-20.329822153772255', 
-    stop_2_long:'57.37133419402788',
-    stop_2_img_url:"https://res.cloudinary.com/trip-buddy/image/upload/v1629451867/trip%20buddy/sightseeing/download_2_oklouj.jpg",
+    stop_2:'La Cosa Nostra Restaurant',
+    stop_2_lat:'-20.32837200567231',
+    stop_2_long:'57.37708135121577',
+    stop_2_img_url:"https://www.cosanostra.mu/images/gallery/image00014.jpg",
     choice:"day",
     category:"hiking"
     }
@@ -217,7 +217,7 @@ sight_seeing5 = {
   category:"sight-seeing"
 }
 sight_seeing6 = {  
-  name: "Herigtage Nature Reserve",
+  name: "Heritage Nature Reserve",
   description:"Experience the magic of horse riding on Riambel Beach, famed for its 2.5km stretch of white sand with no hotels or crowds- ideal for a wonderful and intimate riding experience. This beach offers a true taste of paradise, where you will also have the privilege of enjoying breath-taking views of the resplendent tropical sunset over the Mauritian lagoon.",
   address: "Bel Ombre",
   longitude:"57.4406",
