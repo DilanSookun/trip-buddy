@@ -147,7 +147,7 @@ sight_seeing1 = {
 sight_seeing2 = {  
   name: "Citadelle",
   description: "Citadel Fort Adelaide also known as La Citadelle or Citadel of Fort-Louis is perched on the hill of Port-Louis, 'la Petite Montagne', a silent sentry watches over the capital of Mauritius, La Citadelle de Port Louis, also known as Le Fort Adelaïde",
-  address: "sdfghsfgjhs",
+  address: "Port Louis",
   longitude:"57.50417",
   latitude:"-20.16139",
   duration:"2 hr 30 min ",
@@ -167,7 +167,7 @@ sight_seeing2 = {
 sight_seeing3 = {  
   name: "Ganga Talao",
   description:"Ganga Talao is a major draw of crowds in Mauritius, with many people visiting the site to pray, meditate, play with the local monkeys, or simply to walk by the lake and enjoy the gorgeous surrounding views.The lake of Ganga Talao is thought to be around 18 meters deep and is teeming with a healthy population of fish and eels – no doubt due to the leftover offerings they receive from Hindu pilgrims. However, it is strictly forbidden to fish here due to the sacred nature of the Ganga Talao lake.",
-  address: "dsfhsfdhh",
+  address: "Grand Bassin",
   longitude:"57.50417",
   latitude:"-20.4180",
   duration:"4 hr 30 min ",
@@ -180,8 +180,87 @@ sight_seeing3 = {
   choice:"day",
   category:"sight-seeing"
 }
-
-[sight_seeing1, sight_seeing2, sight_seeing3 ].each do |attributes|
+sight_seeing4 = {  
+  name: "Domaine des Aubineaux",
+  description:"You will visit the “Domaine des Aubineaux” and its gardens. Domaine des Aubineaux is a colonial house built in 1872, which has been converted into a museum dedicated to the history of Mauritian Tea. The tour will continue with a visit to Bois Chéri which is the second stop in the Mauritian Tea Route tour. The Bois Chéri is the first and biggest tea producer in Mauritius, operating since 1892.",
+  address: "Forest-Side, Curepipe",
+  longitude:"57.5319491987",
+  latitude:"-20.3279504213",
+  duration:"5-7 hours ",
+  image_url:"https://res.cloudinary.com/trip-buddy/image/upload/v1629453139/trip%20buddy/sightseeing/domaine_des_aubi_rkkxzl.jpg",
+  price: 800,
+  stop_1: "Restaurant Le Sapin, Discover one of the finest restaurants in Mauritius.",
+  stop_1_lat:"-20.316152646",
+  stop_1_long:"57.520254003",
+  stop_1_img_url:"https://res.cloudinary.com/trip-buddy/image/upload/v1629453139/trip%20buddy/sightseeing/resto_le_sapin_fntpdd.jpg",
+  choice:"day",
+  category:"sight-seeing"
+}
+sight_seeing5 = {  
+  name: "Colored earth Chamarel falls",
+  description:"The landscape at Chamarel is truly unique, it is the only place in world where you can find a clay earth of 7 colors at one place. Also when visiting the park you get to see a great view of the neighboring falls and of the lush vegetation all around.",
+  address: "Chamarel",
+  longitude:"57.38389",
+  latitude:"-20.4225",
+  duration:"6 hours ",
+  image_url:"https://res.cloudinary.com/trip-buddy/image/upload/v1629453139/trip%20buddy/sightseeing/chamarel_k3yp8o.jpg",
+  price: 500,
+  stop_1: "Palais de Barbizon. Situated in Chamarel, steps away from the church, Rico the owner will welcome you with his best moon ever.",
+  stop_1_lat:"-20.42513",
+  stop_1_long:"57.39064",
+  stop_1_img_url:"https://res.cloudinary.com/trip-buddy/image/upload/v1629453139/trip%20buddy/sightseeing/palais_de_barbizon_wqcrwj.jpg",
+  choice:"day",
+  category:"sight-seeing"
+}
+sight_seeing6 = {  
+  name: "Herigtage Nature Reserve",
+  description:"Experience the magic of horse riding on Riambel Beach, famed for its 2.5km stretch of white sand with no hotels or crowds- ideal for a wonderful and intimate riding experience. This beach offers a true taste of paradise, where you will also have the privilege of enjoying breath-taking views of the resplendent tropical sunset over the Mauritian lagoon.",
+  address: "Bel Ombre",
+  longitude:"57.4406436549769",
+  latitude:"-20.50075894870374",
+  duration:"8 hours ",
+  image_url:"https://res.cloudinary.com/trip-buddy/image/upload/v1629453139/trip%20buddy/sightseeing/heritage_kr6epe.jpg",
+  price: 1800,
+  stop_1: "Enba Pié. Set beneath an amazing 138-year-old arbre de l’intendance (banyan tree) at the back of our Welcome Centre, Enba Pié stands for something unique. It brings together the local culture, food, history and nature in one place.",
+  stop_1_lat:"-20.50012081349804",
+  stop_1_long:"57.44002138253928",
+  stop_1_img_url:"https://res.cloudinary.com/trip-buddy/image/upload/v1628830444/trip%20buddy/sightseeing/2747428_zNogcnlhgYmczu2LAw25QW9mOaee3yZx6hWrV_fHuZQ_txvxll.jpg",
+  choice:"night",
+  category:"sight-seeing"
+}
+sight_seeing7 = {  
+  name: "Sunset Horse Riding",
+  description:"Wildlife enthusiasts, come experience the wonderful wildlife to spark off your interest in the conservation journey. Embark on an adventure into the mystical night to learn more about animals in the wild at the Heritage Nature Reserve. After the trip, refreshment and snacks will be served around a camp fire.",
+  address: "Riambel",
+  longitude:"57.48531093963284",
+  latitude:"-20.518382059775764",
+  duration:"5-8 hours ",
+  image_url:"https://res.cloudinary.com/trip-buddy/image/upload/v1629453138/trip%20buddy/sightseeing/_romantic-sunset-horse-riding-on-the-riambel-beach_pmi28o.jpg",
+  price: 1200,
+  stop_1: "Bus Snack. Along the coast of Bel Ombre lies a vintage local bus. A bus that has been refurbished to become a snack bus. Yes, a snack bus! A quirky little snack that immerses itself beautifully within the surroundings of Bel Ombre.",
+  stop_1_lat:"-20.496255416966264", 
+  stop_1_long:"57.39704255226602",
+  stop_1_img_url:"https://res.cloudinary.com/trip-buddy/image/upload/v1629453139/trip%20buddy/sightseeing/bus_snack_rk7fea.jpg",
+  choice:"night",
+  category:"sight-seeing"
+}
+sight_seeing8 = {  
+  name: "Domaine de l'Etoile",
+  description:"The domain counts English gardens, rivers, and indigenous woods which are rich in hundreds of different varieties of plants and trees, including the most ancient ebony trees of Mauritius and other endemic species as well as cinnamon trees, vetivers, orchids, traveller’s trees, banana trees and more. A large river flows through the Domaine as well as trickling streams and flowing waterfalls.",
+  address: "Sebastopol",
+  longitude:"57.69023745289435",
+  latitude:"-20.314911726282386",
+  duration:"3 hours ",
+  image_url:"https://res.cloudinary.com/trip-buddy/image/upload/v1629453139/trip%20buddy/sightseeing/domaine_de_letoile_gg5khh.jpg",
+  price: 1600,
+  stop_1: "Ferney Falaise Rouge Restaurant. Located 2 minutes away from Ferney La Vallée and 15 minutes from Ferney Nature Lodge, Ferney Falaise Rouge restaurant is just off the sea cliff and offers an incredible sea-view facing the Grand-Port bay and Lion Mountain.",
+  stop_1_lat:"-20.370538182551925",
+  stop_1_long:"57.700384333374345",
+  stop_1_img_url:"https://res.cloudinary.com/trip-buddy/image/upload/v1629453141/trip%20buddy/sightseeing/restaurant-falaise-rouge_ad6l81.jpg",
+  choice:"night",
+  category:"sight-seeing"
+}
+[sight_seeing1, sight_seeing2, sight_seeing3, sight_seeing4, sight_seeing5, sight_seeing6, sight_seeing7, sight_seeing8 ].each do |attributes|
   trip = Trip.create!(attributes)
   puts "Created #{trip.name}"
 end
