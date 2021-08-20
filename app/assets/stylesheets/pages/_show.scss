@@ -19,17 +19,17 @@ details p {
  padding: 5px;
 }
 
-.cardtitle {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 25px;
-    color:  #513627;
-    text-align: center;
-    letter-spacing: 1px;
-    padding: 8px;
+.stop-card{
+    background-color: white !important;
+    border-radius: 25px;
+   margin: 10px;
 }
 
 .bookingcards {
+    border-radius: 25px;
     margin-bottom: 100px;
 }
 
-
+.card-header {
+    border-radius: 25px 25px 0 0 !important;
+}

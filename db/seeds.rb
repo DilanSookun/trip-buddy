@@ -1,6 +1,7 @@
 Booking.destroy_all
 Trip.destroy_all
 
+
 hiking_trip1 =
 { name:"Le Pouce" , 
   description:"This mountain is the third highest in Mauritius, peaking at 812m, located in the North West of the island between the Pieter Both and the Signal mountain.From the peak you will have a 360 degree view. The sight of the northern part of the island is splendid, with a beautiful view of the northern small islands of Mauritius - Flat Island, Round Island and Snake Island. It also offers one of the most beautiful views of the capital: Port Louis, as well as Moka and the high grounds of Plain Wilhems. Le Pouce is known as ‘The Thumb’ peak. The first person to climb Le Pouce is accredited as Charles Darwin.",
@@ -21,6 +22,7 @@ hiking_trip1 =
   choice:"day",
   category:"hiking"
   }
+
 
   hiking_trip2 =
   { name: "Le Morne Brabant", 
@@ -124,6 +126,7 @@ hiking_trip4 =
     }
 
   [hiking_trip1, hiking_trip2 ,hiking_trip3,hiking_trip4, hiking_trip5, hiking_trip6 ].each do |attributes|
+
     trip = Trip.create!(attributes)
     puts "Created #{trip.name}"
   end

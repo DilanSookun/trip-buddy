@@ -59,6 +59,14 @@ class TripsController < ApplicationController
   def trip_choice
     @choice = params[:choice]
     @trips = Trip.select { |trip| trip.choice == @choice }
+    while @random.nil?
+      @pick = Trip.unscoped.offset(rand(Trip.unscoped.count)).first
+      @trips.each do |trip|
+        if @pick.choice == trip.choice
+          @random = @pick
+        end
+      end
+    end
     render '_trip_choice'
   end
 

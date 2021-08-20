@@ -1,10 +1,19 @@
-.navbar{
+.navbar {
   // background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.57) 0%, rgba(75, 83, 124, 0.499938) 0.01%, rgba(145, 137, 132, 0) 0.02%, rgba(145, 137, 132, 0) 100%);
   // background-blend-mode: difference;
    background: linear-gradient( #f8ddc1 0%, #977968  100%);
   list-style-type: none;
   border-radius: 25px 25px 0px 0px ;
   box-shadow: 0px 0px 1px rgb(214, 193, 175);
+  .dropdown-menu {
+    width: 75vw;
+    height: 20vh;
+    border-radius: 25px 25px 0 0;
+    background-color: #977968;
+    margin-bottom: 7px;
+    margin-right: -11px;
+    opacity: 0.9;
+  }
 }
 
 .home-icon{

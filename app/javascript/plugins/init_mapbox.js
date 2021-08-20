@@ -169,6 +169,8 @@ const xyz = (coordsObj) => {
         }
       });
     }
+    console.log(coords)
+
     getRoute(coords);
     var geolocate = new mapboxgl.GeolocateControl({
       positionOptions: {
@@ -180,8 +182,16 @@ const xyz = (coordsObj) => {
         showUserHeading: true,
         showUserLocation: true
       });
-   console.log(geolocate)
     map.addControl(geolocate);
+
+    geolocate.on('geolocate', function(e) {
+      var lon = e.coords.longitude;
+      var lat = e.coords.latitude
+      var position = [`'${lon}', '${lat}'`];
+      
+});
+console.log(position);
+getRoute(position);
     
   // });
     //   new mapboxgl.GeolocateControl({

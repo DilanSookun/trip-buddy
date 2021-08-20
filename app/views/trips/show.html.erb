@@ -5,22 +5,20 @@
         <div class="category card m-0 my-4" style="width: 22rem;" >
           <%= image_tag(@trip.image_url, height: 300, width: 340, style: "border-radius: 25px;") %>
           <div class="card-body d-flex justify-content-center p-0 m-0">
-            <h2 class="cardtitle"> <%= @trip.name %> </h2>
+            <h3 class="card-name"> <%= @trip.name %> </h3>
           </div>
         </div>
       </div>
       <div class="d-flex flex-wrap justify-content-center text-center" >
         <div class="info-card" style="width: 22rem;" >
-          <h4> <strong>About the trip:</strong></h4>
-            <%= @trip.description %>
-          <h5><strong>Starting point: </strong></h5>
-            <p><%= @trip.address %></p>
-          <h5><strong> Price: </strong> Rs <%= @trip.price %></h5>
+          <h5> <strong>About your destination:</strong> <br> <%= @trip.description %> </h5>
+          <h5><strong>Your starting point: </strong> <br> <%= @trip.address %> </h5>
+          <h5><strong> Have a safe tour with our expert guides for only: </strong> Rs <%= @trip.price %></h5>
           </div>
         </div>
-      </div>  
+      </div>
       <div class="col-sm-12 d-flex justify-content-center">
-        <div class="sub-choice">
+        <div class="sub-choice text-center">
           <%= simple_form_for(@booking) do |f| %>
             <%= f.hidden_field :total_price, :value => @trip.price %>
             <%= f.hidden_field :trip_id, :value => @trip.id %>
@@ -28,7 +26,11 @@
                         start_year: Date.today.year,
                         end_year: Date.today.year+1, discard_day: false,
                         order: [:day, :month, :year] %>
-            <%= f.button :submit, class: "btn btn-brown w-100 mb-3", value: "Confirm Booking" %>
+              <%= f.button :submit, class: "btn btn-brown w-100 mb-3", value: "Go on trip", data: { disable_with: "Go on trip" } %>
+              <!-- Button trigger modal -->
+            <button type="button" class="btn btn-brown w-100 mb-3" data-toggle="modal" data-target="#exampleModal">
+              Go with a guide
+            </button>
           <% end %>
         </div>
       </div>
@@ -42,5 +44,25 @@
           data-markers="<%= @markers.to_json %>"
           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Trip Buddy</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Your Expert guide will be in touch with you soon!
+      </div>
+      <div class="modal-footer">
+      <%= link_to "Close", bookings_path %>
+      </div>
+    </div>
   </div>
 </div>
